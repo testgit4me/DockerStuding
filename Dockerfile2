@@ -1,0 +1,9 @@
+FROM nginx:alpine
+
+ENV webfile /usr/share/nginx/html/test.html
+
+RUN \
+  echo "7" >> $webfile && \
+  echo "8" >> $webfile && \
+  echo "9" >> $webfile && \
+  echo "10" >> $webfile 

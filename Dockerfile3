@@ -1,0 +1,8 @@
+FROM centos:7
+RUN yum -y upgrade
+RUN yum -y install httpd php php-sql
+
+COPY html-ssl /var/www/html
+RUN echo "<?php phpinfo(); ?>" > /var/www/html/test.php
+
+CMD apachectl -DFOREGROUND
